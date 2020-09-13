@@ -11,12 +11,13 @@ import { fetchposts } from "../store/actions/postAction";
 import { Button } from "./Style.css";
 
 export default function Home() {
-  /* const dispatch = useDispatch();
-  const { posts } = useSelector((state) => state.post);
+  const dispatch = useDispatch();
+  // const { posts } = useSelector((state) => state.post);
+  console.log("post");
 
   useEffect(() => {
     dispatch(fetchposts());
-  }, []); */
+  }, []);
 
   const handleOnClick = () => {
     console.log("i am working");
