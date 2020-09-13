@@ -4,6 +4,8 @@ import React, { useState, useEffect } from "react";
 import Router from "next/router";
 import Link from "next/link";
 
+import Test, { Test2 } from "./Test";
+
 const PartnerShip = () => {
   //hooks
   const [name, setName] = useState("Tomek");
@@ -32,6 +34,9 @@ const PartnerShip = () => {
           <a>home</a>
         </Link>
       </div>
+      <Test name={name}>
+        <div>children</div>
+      </Test>
     </div>
   );
 };
