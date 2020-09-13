@@ -1,4 +1,5 @@
 import React from "react";
+import { Button, SecondButton, Container } from "./Test.css";
 
 interface testProps {
   name: string;
@@ -9,6 +10,12 @@ const Test: React.FC<testProps> = ({ name, children }) => {
 
   return (
     <div>
+      <Container>
+        <Button primary={true}>partnership</Button>
+        <Button primary={false}>partnership</Button>
+
+        <SecondButton primary={false}>partnership</SecondButton>
+      </Container>
       {name} {children}
     </div>
   );
