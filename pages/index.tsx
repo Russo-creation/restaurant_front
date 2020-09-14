@@ -10,12 +10,13 @@ import LoadingIndicator from "../components/LoadingIndicator";
 import * as postActions from "../store/actions/post/actionCreators";
 
 import { Button } from "./Style.css";
+import NavMenu from "./components/NavMenu";
 
 export default function Home() {
   //example how to get values from redux state
-  const productsLoading = useSelector((state) => state.post.loading);
-  const productsError = useSelector((state) => state.post.error);
-  const { posts } = useSelector((state) => state.post);
+  const productsLoading = useSelector(state => state.post.loading);
+  const productsError = useSelector(state => state.post.error);
+  const { posts } = useSelector(state => state.post);
 
   /* helper for chechking if redux async function was refetched
   after changing site its still keeping data global !!! thats
@@ -78,7 +79,7 @@ export default function Home() {
       <div>
         {posts &&
           typeof posts.map === "function" &&
-          posts.map((item) => <h2 key={item.id}>{item.title}</h2>)}
+          posts.map(item => <h2 key={item.id}>{item.title}</h2>)}
       </div>
 
       <div>
@@ -90,24 +91,7 @@ export default function Home() {
         {/* <Button inUse={false} onClick={() => Router.push("#")}>HOME</Button> */}
 
         {process.env.REACT_APP_API_URL}
-        <Button inUse={true} onClick={handleOnClick}>
-          HOME
-        </Button>
-        <Button inUse={true} onClick={() => Router.push("/partnershp")}>
-          partnership
-        </Button>
-        <button onClick={() => Router.push("#")}>ZALOGUJ</button>
-        <button onClick={() => Router.push("/partnershp")}>
-          STREFA PARTNERA
-        </button>
-        <div>
-          LANGUAGE
-          <select>
-            <option>PL</option>
-            <option>EN</option>
-            <option>DE</option>
-          </select>
-        </div>
+        <NavMenu></NavMenu>
       </div>
     </div>
   );
