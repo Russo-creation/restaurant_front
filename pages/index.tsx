@@ -14,6 +14,8 @@ import NavMenu from "./components/NavMenu";
 
 import { i18n, withTranslation } from "../i18n";
 
+import { isMobile } from "react-device-detect";
+
 type Props = {
   t: (arg0: string) => React.ReactNode;
 };
@@ -96,6 +98,7 @@ const Home = ({ t }: Props) => {
       */}
         {/* <Button inUse={false} onClick={() => Router.push("#")}>HOME</Button> */}
         <div>
+          <div>{isMobile ? "its phone" : "its PC"}</div>
           <button
             type="button"
             onClick={() =>
