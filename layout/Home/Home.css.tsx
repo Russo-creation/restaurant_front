@@ -3,10 +3,9 @@ import styled, { css } from "styled-components";
 
 interface styleProps {
   inUse: boolean;
-  onClick: () => void;
 }
 
-export const Button: React.FC<styleProps> = styled.button`
+export const Button = styled.button<styleProps>`
   background: red;
   border: none;
 `;

@@ -5,6 +5,9 @@ import LoadingIndicator from "../components/LoadingIndicator";
 import * as postActions from "../store/actions/post/actionCreators";
 
 import { isMobile } from "react-device-detect";
+{
+  /* <div>{isMobile ? "its phone" : "its PC"}</div> */
+}
 
 import { i18n, withTranslation } from "../i18n";
 
@@ -14,9 +17,9 @@ type Props = {
 
 const helper_page = ({ t }: Props) => {
   //example how to get values from redux state
-  const productsLoading = useSelector((state) => state.post.loading);
-  const productsError = useSelector((state) => state.post.error);
-  const { posts } = useSelector((state) => state.post);
+  const productsLoading = useSelector(state => state.post.loading);
+  const productsError = useSelector(state => state.post.error);
+  const { posts } = useSelector(state => state.post);
 
   /* helper for chechking if redux async function was refetched
   after changing site its still keeping data global !!! thats
@@ -69,7 +72,7 @@ const helper_page = ({ t }: Props) => {
       <div>
         {posts &&
           typeof posts.map === "function" &&
-          posts.map((item) => <h2 key={item.id}>{item.title}</h2>)}
+          posts.map(item => <h2 key={item.id}>{item.title}</h2>)}
       </div>
       <div>
         <div>{isMobile ? "its phone" : "its PC"}</div>
@@ -89,7 +92,7 @@ const helper_page = ({ t }: Props) => {
 };
 
 helper_page.getInitialProps = async () => ({
-  namespacesRequired: ["home", "common"],
+  namespacesRequired: ["home", "common"]
 });
 
 export default withTranslation("home")(helper_page);

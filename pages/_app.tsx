@@ -16,8 +16,8 @@ const MyApp = ({ Component, pageProps }) => (
   </Provider>
 );
 
-MyApp.getInitialProps = async (appContext) => ({
-  ...(await App.getInitialProps(appContext)),
+MyApp.getInitialProps = async appContext => ({
+  ...(await App.getInitialProps(appContext))
 });
 
 export default wrapper.withRedux(appWithTranslation(MyApp));

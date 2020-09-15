@@ -1,32 +1,48 @@
 import React from "react";
 import Router from "next/router";
+import Link from "next/link";
 
-import { Button, Nav, LangDiv, P, Select } from "./Navigator.css";
+import {
+  Button,
+  Nav,
+  LangContainer,
+  LangText,
+  Select,
+  ButtonsContainer
+} from "./Navigator.css";
 
-const handleOnClick = () => {
-  console.log("i am working");
-};
+// const handleOnClick = () => {
+//   console.log("i am working");
+// };
 
 const Navigator = () => {
   return (
     <Nav>
-      <Button inUse onClick={handleOnClick}>
-        HOME
-      </Button>
-      <Button inUse={false} onClick={() => Router.push("#")}>
-        ZALOGUJ
-      </Button>
-      <Button inUse={false} onClick={() => Router.push("/partnershp")}>
-        STREFA PARTNERA
-      </Button>
-      <LangDiv>
-        <P>LANGUAGE</P>
+      <ButtonsContainer>
+        <Link href="#">
+          <a>
+            <Button inUse>HOME</Button>
+          </a>
+        </Link>
+        <Link href="#">
+          <a>
+            <Button inUse={false}>ZALOGUJ</Button>
+          </a>
+        </Link>
+        <Link href="#">
+          <a>
+            <Button inUse={false}>STREFA PARTNERA</Button>
+          </a>
+        </Link>
+      </ButtonsContainer>
+      <LangContainer>
+        <LangText>LANGUAGE</LangText>
         <Select>
           <option>PL</option>
           <option>EN</option>
           <option>DE</option>
         </Select>
-      </LangDiv>
+      </LangContainer>
     </Nav>
   );
 };
