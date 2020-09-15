@@ -1,14 +1,13 @@
 import React from "react";
-import {} from "./NavMenu.css";
 import Router from "next/router";
 
-import { Button, Nav, LangDiv, P, Select } from "./NavMenu.css";
+import { Button, Nav, LangDiv, P, Select } from "./Navigator.css";
 
 const handleOnClick = () => {
   console.log("i am working");
 };
 
-const NavMenu = () => {
+const Navigator = () => {
   return (
     <Nav>
       <Button inUse onClick={handleOnClick}>
@@ -32,4 +31,4 @@ const NavMenu = () => {
   );
 };
 
-export default NavMenu;
+export default Navigator;
