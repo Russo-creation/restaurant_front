@@ -4,7 +4,7 @@ import Router from "next/router";
 import Link from "next/link";
 
 import { useDispatch, useSelector } from "react-redux";
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useContext } from "react";
 import LoadingIndicator from "../components/LoadingIndicator";
 
 import * as postActions from "../store/actions/post/actionCreators";
@@ -12,11 +12,17 @@ import * as postActions from "../store/actions/post/actionCreators";
 import { Button } from "./Style.css";
 import NavMenu from "./components/NavMenu";
 
-export default function Home() {
+import { i18n, withTranslation } from "../i18n";
+
+type Props = {
+  t: (arg0: string) => React.ReactNode;
+};
+
+const Home = ({ t }: Props) => {
   //example how to get values from redux state
-  const productsLoading = useSelector(state => state.post.loading);
-  const productsError = useSelector(state => state.post.error);
-  const { posts } = useSelector(state => state.post);
+  const productsLoading = useSelector((state) => state.post.loading);
+  const productsError = useSelector((state) => state.post.error);
+  const { posts } = useSelector((state) => state.post);
 
   /* helper for chechking if redux async function was refetched
   after changing site its still keeping data global !!! thats
@@ -79,7 +85,7 @@ export default function Home() {
       <div>
         {posts &&
           typeof posts.map === "function" &&
-          posts.map(item => <h2 key={item.id}>{item.title}</h2>)}
+          posts.map((item) => <h2 key={item.id}>{item.title}</h2>)}
       </div>
 
       <div>
@@ -89,10 +95,26 @@ export default function Home() {
         </Link>
       */}
         {/* <Button inUse={false} onClick={() => Router.push("#")}>HOME</Button> */}
-
+        <div>
+          <button
+            type="button"
+            onClick={() =>
+              i18n.changeLanguage(i18n.language === "en" ? "pl" : "en")
+            }
+          >
+            change Lang
+          </button>
+          {t("login")} {t("logout")} {t("common:h1")}
+        </div>
         {process.env.REACT_APP_API_URL}
         <NavMenu></NavMenu>
       </div>
     </div>
   );
-}
+};
+
+Home.getInitialProps = async () => ({
+  namespacesRequired: ["home", "common"],
+});
+
+export default withTranslation("home")(Home);

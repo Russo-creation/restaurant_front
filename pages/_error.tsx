@@ -6,10 +6,10 @@ type Props = {
   t: (arg0: string) => React.ReactNode;
 };
 
-const Error = ({ t }: Props) => {
+const errorPage = ({ t }: Props) => {
   return (
     <div>
-      <h1>{t("title")}</h1>
+      <h1>Ooops, something went wrong</h1>
       <p>
         Try
         <Link href="/">
@@ -20,4 +20,6 @@ const Error = ({ t }: Props) => {
   );
 };
 
-export default withTranslation("404")(Error);
+errorPage.getInitialProps = async () => ({ namespacesRequired: ["common"] });
+
+export default withTranslation("common")(errorPage);
