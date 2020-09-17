@@ -23,24 +23,17 @@ const HomePage = ({ t }: Props) => {
         <title>FOOD NOW</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Navigator />
+      <body>
+        <Navigator />
 
-      <Home />
-
-      <div>
-        {/* 
-        <Link href="./partnershp">
-          <a>partnership</a> 
-        </Link>
-      */}
-        {/* <Button inUse={false} onClick={() => Router.push("#")}>HOME</Button> */}
-      </div>
+        <Home />
+      </body>
     </div>
   );
 };
 
 HomePage.getInitialProps = async () => ({
-  namespacesRequired: ["home", "common"],
+  namespacesRequired: ["home", "common"]
 });
 
 export default withTranslation("home")(HomePage);

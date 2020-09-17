@@ -24,7 +24,7 @@ export const ButtonsContainer = styled.div`
 `;
 
 export const Button = styled.div<styleProps>`
-  background: red;
+  background: transparent;
   border: none;
   display: inline-block;
   line-height: 100px;
@@ -38,7 +38,7 @@ export const LangContainer = styled.div`
 `;
 
 export const LangText = styled.div`
-  background: red;
+  background: transparent;
   border: none;
   display: inline-block;
   width: 100%;
@@ -47,7 +47,7 @@ export const LangText = styled.div`
   font-weight: 900;
 `;
 export const Select = styled.select`
-  background: transparent;
+  background-color: transparent;
   color: white;
   width: 100%;
   padding: 0;
@@ -65,6 +65,12 @@ export const Select = styled.select`
   background-size: 5px 5px, 5px 5px, 1px 1.5em;
   background-repeat: no-repeat;
   appearance: none;
+
+  option {
+    background-color: transparent;
+    color: black;
+  }
+
   &:focus {
     outline: none;
   }

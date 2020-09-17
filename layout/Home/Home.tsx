@@ -1,10 +1,14 @@
 import React from "react";
-import { Button } from "./Home.css";
+import { Content } from "./Home.css";
 
 interface indexProps {}
 
 const Home: React.FC<indexProps> = ({}) => {
-  return <div>This is body of page</div>;
+  return (
+    <Content>
+      <div>This is body of page</div>
+    </Content>
+  );
 };
 
 export default Home;
