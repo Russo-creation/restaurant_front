@@ -13,8 +13,8 @@ export const Button = styled.button<styleProps>`
 `;
 
 export const Content = styled.div`
-  width: 300px;
-  height: 300px;
+  width: 100vw;
+  height: 100vh;
   background-color: red;
 
   background: url("${bcg}");

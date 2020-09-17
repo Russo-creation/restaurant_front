@@ -1,3 +1,5 @@
 {
-  "h1": "this is reusable globally text"
+  "NavigatorHome": "Home",
+  "NavigatorSignIn": "Sign in",
+  "NavigatorPartnership": "partnership"
 }

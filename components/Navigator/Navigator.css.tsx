@@ -10,7 +10,7 @@ export const Nav = styled.nav`
   top: 0;
   right: 0;
   left: 0;
-  background: blue;
+  background: transparent;
   border: none;
   max-width: 1024px;
   height: 100px;
@@ -33,6 +33,7 @@ export const Button = styled.div<styleProps>`
   display: inline-block;
   line-height: 100px;
   padding: 0 40px;
+  text-transform: uppercase;
 `;
 
 export const LangContainer = styled.div`
@@ -69,6 +70,7 @@ export const Select = styled.select`
   background-size: 5px 5px, 5px 5px, 1px 1.5em;
   background-repeat: no-repeat;
   appearance: none;
+  cursor: pointer;
 
   option {
     background-color: transparent;
