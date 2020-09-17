@@ -1,6 +1,7 @@
 import React from "react";
 import styled, { css } from "styled-components";
-import bcg from "../../images/bcg.png";
+
+const bcg = require("../../images/Home/mainBackground.png");
 
 interface styleProps {
   inUse: boolean;
@@ -12,5 +13,9 @@ export const Button = styled.button<styleProps>`
 `;
 
 export const Content = styled.div`
-  background-image: url(${bcg});
+  width: 300px;
+  height: 300px;
+  background-color: red;
+
+  background: url("${bcg}");
 `;
