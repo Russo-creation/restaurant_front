@@ -23,11 +23,13 @@ type Props = {
 
 const SelectTypeForMobile = () => {
   return (
-    <Select>
-      <option>PL</option>
-      <option>EN</option>
-      <option>DE</option>
-    </Select>
+    <div>
+      <Select>
+        <option>PL</option>
+        <option>EN</option>
+        <option>DE</option>
+      </Select>
+    </div>
   );
 };
 
