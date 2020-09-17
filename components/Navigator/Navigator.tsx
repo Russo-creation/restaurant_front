@@ -1,6 +1,7 @@
 import React from "react";
 import Router from "next/router";
 import Link from "next/link";
+import { i18n, withTranslation } from "../../i18n";
 
 import {
   Button,
@@ -15,7 +16,11 @@ import {
 //   console.log("i am working");
 // };
 
-const Navigator = () => {
+type Props = {
+  t: (arg0: string) => React.ReactNode;
+};
+
+const Navigator = ({ t }: Props) => {
   return (
     <Nav>
       <ButtonsContainer>
@@ -31,7 +36,7 @@ const Navigator = () => {
         </Link>
         <Link href="#">
           <a>
-            <Button inUse={false}>STREFA PARTNERA</Button>
+            <Button inUse={false}> {t("h1")} STREFA PARTNERA</Button>
           </a>
         </Link>
       </ButtonsContainer>
@@ -47,4 +52,7 @@ const Navigator = () => {
   );
 };
 
-export default Navigator;
+Navigator.getInitialProps = async () => ({
+  namespacesRequired: ["common"]
+});
+export default withTranslation("common")(Navigator);

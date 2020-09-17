@@ -23,11 +23,10 @@ const HomePage = ({ t }: Props) => {
         <title>FOOD NOW</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <body>
-        <Navigator />
 
-        <Home />
-      </body>
+      <Navigator />
+
+      <Home />
     </div>
   );
 };

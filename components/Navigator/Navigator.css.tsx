@@ -6,6 +6,10 @@ interface styleProps {
 }
 
 export const Nav = styled.nav`
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
   background: blue;
   border: none;
   max-width: 1024px;
@@ -24,7 +28,7 @@ export const ButtonsContainer = styled.div`
 `;
 
 export const Button = styled.div<styleProps>`
-  background: transparent;
+  background: ${props => props.theme.light.main};
   border: none;
   display: inline-block;
   line-height: 100px;
